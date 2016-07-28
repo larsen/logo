@@ -100,9 +100,10 @@
     (with-events ()
       (:quit-event () t)
       (:key-down-event (:key key)
-                       (when (sdl:key= key :sdl-key-escape))
-                       (sdl:push-quit-event))
-      (:idle (reset-turtle)
+                       (case key
+                         (:sdl-key-escape (push-quit-event))))
+      (:idle (clear-display *black*)
+             (reset-turtle)
              (fancy 20)
              (draw-turtle *position-x* *position-y* *direction*)
              (update-display)))))
