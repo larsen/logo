@@ -1,12 +1,4 @@
-;; LOGO
-
-(ql:quickload "lispbuilder-sdl")
-
-(defpackage :logo
-  (:use :cl :sdl)
-  (:export main))
-
-(in-package :logo)
+(in-package #:logo)
 
 (defparameter *window-width* 600)
 (defparameter *window-height* 600)
